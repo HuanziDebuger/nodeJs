@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="keyword" content="dsjjvcsdnvjnds"/>
+	<meta name="description" content="sfsdfsdfd"/>
+	<title>//node 全局对象 global</title>
+</head>
+<body>
+	<div id='aa'>
+		<a>12121</a>
+		<a>12121</a>
+		<a>12121</a>
+		<a>12121</a>
+		<a>12121</a>
+	</div>
+	<script>
+         var aa =document.getElementById('aa');
+		function init(qq){
+			var links=qq.getElementsByTagName('a');
+
+			for(var i=0;i<links.length;i++){
+				var link=links[i];
+				link.style.fontWeight='bold';
+				link.style.textDecoration='none';
+				link.style.color='#000';
+				link.onclick=(function(i){
+					return function(){
+						alert(i);
+					}
+				})(i);
+			}
+		}
+		init(aa);
+	</script>
+</body>
+</html>
